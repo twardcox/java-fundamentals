@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-// import java.util.Random;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -28,16 +28,15 @@ public class Main {
   }
 
   public static void flipNHeads(int n) {
-    // Random rand = new Random();
+    Random rand = new Random();
     int count = 0;
     int headCount = 0;
 
     while (headCount < n) {
-      double ranNum = Math.random();
 
       count++;
 
-      if (ranNum < 0.5) {
+      if (rand.nextFloat() < 0.5) {
         headCount = 0;
         System.out.println("tails");
       } else {
