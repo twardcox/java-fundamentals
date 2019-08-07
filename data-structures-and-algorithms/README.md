@@ -1,17 +1,16 @@
-# Table of contents
+# Data Structures & Algorithms File Structure for Code 401: Java
 
-# Reverse an Array
+This repo shows the expected file structure for Code 401: Java data structures & algorithms. The command `gradle init --type java-library` was run inside of the `code401challenges` directory, and that `code401challenges` directory is the root from which I open IntelliJ.
 
-This is the first code challenge of the 401 course. And my first real java method.
+This root README is where the links to daily work live.
 
-## Challenge
+## Week 1 Challenges
+* [Day 1: Reverse an Array](./code401challenges/src/main/java/code401challenges/ArrayReverse.java)  
+  ![Alt text](./assets/array_reverse.jpg?raw=true 'Reverse Array')
+* [Day 2: Shift an Array](./code401challenges/src/main/java/code401challenges/ArraryShift.java)
+![Alt text](./assets/array_shift.jpg?raw=true 'Shift Array')
 
-Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
+## Code 401 Challenges
+* [Inside their directory](./301-code-challenges)
 
-## Approach & Efficiency
 
-Both solutions to this problem were white boarded with myself and Peter Lee. My approach is to create a new array then iterate over the original backwards placing the values into the new array forwards.
-
-## Solution
-
-![Alt text](./assets/array_reverse.jpg?raw=true 'Reverse Array')
