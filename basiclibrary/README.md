@@ -7,7 +7,11 @@
     -- roll  
     -- containsDuplicates  
     -- calculateAverages  
-    -- arrayOfArraysLowestAverage      
+    -- arrayOfArraysLowestAverage  
+
+* [Hash Set](./src/main/java/basiclibrary/HashSetExample.java)  
+    -- weatherNotice  
+    -- tally    
 
 ## Tests
 * [Test Library](./src/test/java/basiclibrary/LibraryTest.java)  
@@ -23,3 +27,6 @@
     -- testArrayOfArraysLowestAverageHappy  
     -- testArrayOfArraysLowestAverageSad  
     
+* [Test Hash Set](./src/test/java/basiclibrary/HashSetTest.java)  
+    -- testWeatherNotice  
+    -- testTally
