@@ -8,22 +8,22 @@ import static org.junit.Assert.*;
 
 public class AppTest {
     @Test public void testlintErGates() {
-        App.lintEr("src/main/resources/gates.js");
+        assertEquals(App.lintEr("src/main/resources/gates.js"), 46); ;
     }
 
     @Test public void testlintErEmpty() {
-        App.lintEr("src/main/resources/empty.js");
+        assertEquals(App.lintEr("src/main/resources/empty.js"), 0);
     }
 
     @Test public void testlintErFewErrors() {
-        App.lintEr("src/main/resources/fewErrors.js");
+        assertEquals(App.lintEr("src/main/resources/fewErrors.js"), 2);
     }
 
     @Test public void testlintErNoErrors() {
-        App.lintEr("src/main/resources/noErrors.js");
+        assertEquals(App.lintEr("src/main/resources/noErrors.js"), 0);
     }
 
     @Test public void testlintErOneError() {
-        App.lintEr("src/main/resources/oneError.js");
+        assertEquals(App.lintEr("src/main/resources/oneError.js"), 1);
     }
 }

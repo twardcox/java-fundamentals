@@ -11,23 +11,26 @@ import java.util.Scanner;
 
 public class App {
 
-    public static String lintEr(String path) {
+    public static int lintEr(String path) {
         Scanner s = null;
+        int line = 0;
+        int ErrorCount = 0;
         try {
             s = new Scanner(new BufferedReader(new FileReader(path)));
-            int line = 0;
+
             while (s.hasNextLine()){
                 line++;
                 String readMe = s.nextLine();
-                if (!readMe.endsWith(";") && readMe.length()>0 && !(readMe.endsWith("{") || readMe.endsWith("}") || readMe.contains("if") || readMe.contains("else"))){
+                if (readMe.length()>0 && !(readMe.endsWith(";") || readMe.endsWith("{") || readMe.endsWith("}") || readMe.contains("if") || readMe.contains("else"))){
+                    ErrorCount++;
                     System.out.println("Line " + line + ": Missing semicolon.");
                 }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-        return "Hello world.";
+        System.out.println("Line " + ErrorCount);
+        return ErrorCount;
     }
 
     public static void main(String[] args) {
