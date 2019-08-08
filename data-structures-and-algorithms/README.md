@@ -7,6 +7,9 @@ This root README is where the links to daily work live.
 ## Week 1 Challenges
 ## [Day 1: Reverse an Array](./code401challenges/src/main/java/code401challenges/ArrayReverse.java)  
   
+## Paired Programming Partner
+* Peter Lee
+
   ### Challenge Summary
   Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to your language, return an array with elements in reversed order.
   
@@ -22,6 +25,9 @@ This root README is where the links to daily work live.
   
 ## [Day 2: Shift an Array](./code401challenges/src/main/java/code401challenges/ArraryShift.java)
   
+## Paired Programming Partner
+* Kevin Couture
+
   ### Challenge Summary
   Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
   
@@ -34,7 +40,24 @@ This root README is where the links to daily work live.
   #### Solution
   ![Alt text](./assets/array_shift.jpg?raw=true 'Shift Array')
 
-## Code 401 Challenges
-* [Inside their directory](./301-code-challenges)
+  
+## [Day 3: Binary Search](./code401challenges/src/main/java/code401challenges/BinarySearch.java)
+
+## Paired Programming Partner
+* Melfi Perez
+  
+  ### Challenge Summary
+  Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
+  
+  #### Challenge Description
+  Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
+  
+  #### Approach & Efficiency
+  * First attempt used recursion but required the use of a built in function. 
+  * we got close on the second attempt but needed to do some research online.
+  * https://dzone.com/articles/binary-searching-in-java-without-recursion
+  
+  #### Solution
+  ![Alt text](./assets/binary_search.jpg?raw=true 'Binary Search')
 
 
