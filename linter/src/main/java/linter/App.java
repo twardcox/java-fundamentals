@@ -21,6 +21,7 @@ public class App {
             while (s.hasNextLine()){
                 line++;
                 String readMe = s.nextLine();
+//                readMe.matches(".[{};]$")... ish
                 if (readMe.length()>0 && !(readMe.endsWith(";") || readMe.endsWith("{") || readMe.endsWith("}") || readMe.contains("if") || readMe.contains("else"))){
                     ErrorCount++;
                     System.out.println("Line " + line + ": Missing semicolon.");
