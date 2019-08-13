@@ -10,6 +10,9 @@
 
 * [data-structures-and-algorithms](./data-structures-and-algorithms)
 
+* [inheritance](./inheritance)
+
+
 ### Collaborators
 
 * The entire seattle-java-401d5 class!
