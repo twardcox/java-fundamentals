@@ -38,6 +38,12 @@ public class Review {
   }
 
   public void setStars(int stars) {
+    if (stars > 5){
+      this.stars = 5;
+    } else if (stars < 0){
+      this.stars = 0;
+    } else {
     this.stars = stars;
+    }
   }
 }
