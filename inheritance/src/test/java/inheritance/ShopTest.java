@@ -5,13 +5,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class RestaurantTest {
+public class ShopTest {
 
-  Restaurant McCoxs;
+  Shop McCoxs;
 
   @Before
   public void setup() {
-    McCoxs = new Restaurant("McCoxs", 3, "$");
+    McCoxs = new Shop("McCoxs", "Mortuary", 3, "$$");
   }
 
   @Test
@@ -30,14 +30,14 @@ public class RestaurantTest {
   @Test
   public void testGetPriceHappy() {
 
-    assertEquals("testGetPriceHappy: Price should be $", "$", McCoxs.getPrice());
+    assertEquals("testGetPriceHappy: Price should be $", "$$", McCoxs.getPrice());
 
   }
 
   @Test
   public void testToStringHappy() {
 
-    assertEquals("testToStringHappy: Should equal", "McCoxs is a 3 star restaurant that costs $", McCoxs.toString());
+    assertEquals("testToStringHappy: Should equal", "Shop{name='McCoxs', description='Mortuary', price='$$', reviews=[]}", McCoxs.toString());
   }
 
   @Test
@@ -50,7 +50,6 @@ public class RestaurantTest {
 
   @Test
   public void testAddReview_UpdateStars_Happy() {
-
     McCoxs.addReview("What do you Know?", "Matt Stuhring", 5, McCoxs);
     McCoxs.addReview("Who do you Know?", "Jack Kinne", 3, McCoxs);
     assertEquals("testAddReview_UpdateStars_Happy should be equal", 4, McCoxs.getStars());

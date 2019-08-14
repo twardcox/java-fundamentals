@@ -4,11 +4,31 @@ public class Review {
   private String body;
   private String author;
   private int stars;
+  private Restaurant restaurant;
+  private Shop shop;
+  private Theater theater;
 
-  public Review(String body, String author, int stars) {
+  public Review(String body, String author, int stars, Restaurant restaurant) {
     this.body = body;
     this.author = author;
     this.stars = stars;
+    this.restaurant = restaurant;
+
+  }
+
+  public Review(String body, String author, int stars, Shop shop) {
+    this.body = body;
+    this.author = author;
+    this.stars = stars;
+    this.shop = shop;
+
+  }
+
+  public Review(String body, String author, int stars, Theater theater) {
+    this.body = body;
+    this.author = author;
+    this.stars = stars;
+    this.theater = theater;
 
   }
 

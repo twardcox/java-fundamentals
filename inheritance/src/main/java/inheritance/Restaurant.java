@@ -3,7 +3,6 @@
  */
 package inheritance;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Restaurant {
@@ -19,9 +18,9 @@ public class Restaurant {
         this.price = price;
     }
 
-    public void addReview(String body, String author, int stars){
+    public void addReview(String body, String author, int stars, Restaurant restaurant){
 
-        reviews.add(new Review(body, author, stars));
+        reviews.add(new Review(body, author, stars, this));
         int sum = 0;
         for (Review review : this.reviews){
             sum += review.getStars();
