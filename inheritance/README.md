@@ -21,5 +21,5 @@ This directory is dedicated to the inheritance assignment
 
   ### Challenge Summary
 Create a class to represent a Restaurant. Each Restaurant should have a name, a number of stars betweeen 0 and 5, and a price category (i.e. number of dollar signs).  
-  
+Add two more classes and extend the review.
   
