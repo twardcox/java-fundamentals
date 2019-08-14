@@ -84,4 +84,50 @@ public class LinkedListTest {
     assertEquals("testInsertAfter value should be Equal.", "1, 2, 3, 4, 5",list.toString(list));
   }
 
+  @Test
+  public void testKthFromEndHappy() {
+    LinkedList<Integer> list = new LinkedList<>();
+    list.insert(list, 1);
+    list.insert(list, 2);
+    list.insert(list, 3);
+    list.insert(list, 5);
+    assertEquals("testKthFromEndHappy should be equal","2", list.kthFromEnd(list, 2));
+  }
+
+  @Test
+  public void testKthFromEnd_KGreaterThanSize() {
+    LinkedList<Integer> list = new LinkedList<>();
+    list.insert(list, 1);
+    list.insert(list, 2);
+    list.insert(list, 3);
+    list.insert(list, 5);
+    assertEquals("testKthFromEnd_KGreaterThanSize should be equal","Your K size greater than the list size.", list.kthFromEnd(list, 6));
+  }
+
+  @Test
+  public void testKthFromEnd_KLessThanZero() {
+    LinkedList<Integer> list = new LinkedList<>();
+    list.insert(list, 1);
+    list.insert(list, 2);
+    list.insert(list, 3);
+    list.insert(list, 5);
+    assertEquals("testKthFromEnd_KLessThanZero should be equal","your K size is less than zero.", list.kthFromEnd(list, -1));
+  }
+
+  @Test
+  public void testKthFromEnd_KEqualsSize() {
+    LinkedList<Integer> list = new LinkedList<>();
+    list.insert(list, 1);
+    list.insert(list, 2);
+    list.insert(list, 3);
+    list.insert(list, 5);
+    assertEquals("testKthFromEnd_KEqualsSize should be equal","5", list.kthFromEnd(list, 4));
+  }
+
+  @Test
+  public void testKthFromEnd_SizeEqualsOne() {
+    LinkedList<Integer> list = new LinkedList<>();
+    list.insert(list, 1);
+    assertEquals("testKthFromEnd_SizeEqualsOne should be equal","1", list.kthFromEnd(list, 1));
+  }
 }
