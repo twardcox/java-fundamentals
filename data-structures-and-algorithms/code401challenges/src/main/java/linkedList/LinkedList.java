@@ -1,5 +1,7 @@
 package linkedList;
 
+import java.util.ArrayList;
+
 public class LinkedList<T> {
   public Node<T> head;
 
@@ -72,7 +74,7 @@ public class LinkedList<T> {
   }
 
   public void insertBefore(LinkedList<T> list, T value, T newValue){
-    Node currentNode = list.head;
+    Node<T> currentNode = list.head;
 
     while (currentNode.next != null){
 
@@ -81,14 +83,35 @@ public class LinkedList<T> {
       }
       currentNode = currentNode.next;
     }
-    Node temp = currentNode.next;
-    Node newNext = new Node<>(newValue);
+    Node<T> temp = currentNode.next;
+    Node<T> newNext = new Node<>(newValue);
     newNext.next = temp;
     currentNode.next = newNext;
   }
 
+  public String kthFromEnd(LinkedList<T> list, int k){
+    ArrayList<T> savedValues = new ArrayList<T>();
+    Node<T> currentNode = list.head;
 
-}
+    while (currentNode != null){
+      savedValues.add(currentNode.value);
+      currentNode = currentNode.next;
+      }
+
+    if (k > savedValues.size()){
+      return "Your K size greater than the list size.";
+    } else if (k < 0){
+      return "your K size is less than zero.";
+    } else if (k == savedValues.size()){
+      return savedValues.get(savedValues.size()-1).toString();
+    }
+    int index = (savedValues.size() - 1) - k;
+    return savedValues.get(index).toString();
+
+  }
+
+};
+
 
 
 
