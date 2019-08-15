@@ -3,9 +3,9 @@ package linkedList;
 import java.util.ArrayList;
 
 public class LinkedList<T> {
-  public Node<T> head;
+  public static Node head;
 
-  public LinkedList insert(LinkedList list, T value){
+  public LinkedList insert(LinkedList list, T value) {
     Node<T> new_node = new Node<T>(value);
     new_node.next = null;
 
@@ -13,7 +13,7 @@ public class LinkedList<T> {
       list.head = new_node;
     } else {
       Node last = list.head;
-      while(last.next != null){
+      while (last.next != null) {
         last = last.next;
       }
       last.next = new_node;
@@ -21,10 +21,10 @@ public class LinkedList<T> {
     return list;
   }
 
-  public boolean includes(LinkedList<Integer> list, T value){
+  public boolean includes(LinkedList<Integer> list, T value) {
     Node<Integer> currentNode = list.head;
-    while (currentNode != null){
-      if (currentNode.value == value){
+    while (currentNode != null) {
+      if (currentNode.value == value) {
         return true;
       }
       currentNode = currentNode.next;
@@ -32,14 +32,14 @@ public class LinkedList<T> {
     return false;
   }
 
-  public String toString(LinkedList<Integer> list){
+  public String toString(LinkedList list) {
     Node<Integer> currentNode = list.head;
 
     StringBuilder out = new StringBuilder();
 
-    while (currentNode != null){
-      if (currentNode.next != null){
-      out.append(currentNode.value).append(", ");
+    while (currentNode != null) {
+      if (currentNode.next != null) {
+        out.append(currentNode.value).append(", ");
       } else {
         out.append(currentNode.value);
       }
@@ -48,22 +48,22 @@ public class LinkedList<T> {
     return out.toString();
   }
 
-  public void append(LinkedList<T> list, T value){
+  public void append(LinkedList<T> list, T value) {
     Node<T> currentNode = list.head;
 
-    while (currentNode.next != null){
+    while (currentNode.next != null) {
       currentNode = currentNode.next;
     }
     Node<T> nextNode = new Node<>(value);
     currentNode.next = nextNode;
   }
 
-  public void insertAfter(LinkedList<T> list, T value, T newValue){
+  public void insertAfter(LinkedList<T> list, T value, T newValue) {
     Node<T> currentNode = list.head;
 
-    while (currentNode.next != null){
+    while (currentNode.next != null) {
       currentNode = currentNode.next;
-      if (currentNode.value == value){
+      if (currentNode.value == value) {
         break;
       }
     }
@@ -73,12 +73,12 @@ public class LinkedList<T> {
     currentNode.next = newNext;
   }
 
-  public void insertBefore(LinkedList<T> list, T value, T newValue){
+  public void insertBefore(LinkedList<T> list, T value, T newValue) {
     Node<T> currentNode = list.head;
 
-    while (currentNode.next != null){
+    while (currentNode.next != null) {
 
-      if (currentNode.next.value == value){
+      if (currentNode.next.value == value) {
         break;
       }
       currentNode = currentNode.next;
@@ -89,30 +89,61 @@ public class LinkedList<T> {
     currentNode.next = newNext;
   }
 
-  public String kthFromEnd(LinkedList<T> list, int k){
+  public String kthFromEnd(LinkedList<T> list, int k) {
     ArrayList<T> savedValues = new ArrayList<T>();
     Node<T> currentNode = list.head;
 
-    while (currentNode != null){
+    while (currentNode != null) {
       savedValues.add(currentNode.value);
       currentNode = currentNode.next;
-      }
+    }
 
-    if (k > savedValues.size()){
+    if (k > savedValues.size()) {
       return "Your K size greater than the list size.";
-    } else if (k < 0){
+    } else if (k < 0) {
       return "your K size is less than zero.";
-    } else if (k == savedValues.size()){
-      return savedValues.get(savedValues.size()-1).toString();
+    } else if (k == savedValues.size()) {
+      return savedValues.get(savedValues.size() - 1).toString();
     }
     int index = (savedValues.size() - 1) - k;
     return savedValues.get(index).toString();
 
   }
 
-};
+  public static LinkedList mergeLists(LinkedList one, LinkedList two) {
+    Node currentOne = one.head; // storing head of list one
+    Node currentTwo = two.head; // storing head of list two
+
+
+    while (currentOne.next != null && currentTwo.next != null) { // while neither list's next is null
+      Node temp1; // temporary store of list one's next
+      Node temp2; // temporary store of list two's next
+
+      temp1 = currentOne.next; // assign one's next to var
+      temp2 = currentTwo.next; // assign two's next to var
+
+      currentTwo.next = temp1; // assign list two's next to one's next
+      currentOne.next = currentTwo; // assign list two's head to one's next.
+
+//      advance each lists head
+      currentOne = temp1;
+      currentTwo = temp2;
+    }
+
+      if (currentOne.next == null) {
+        currentOne.next = currentTwo;
+      }
+
+      if (currentTwo.next == null) {
+        currentTwo.next = currentOne.next;
+        currentOne.next = currentTwo;
+      }
 
 
 
+    return one;
+  }
+
+}
 
 
