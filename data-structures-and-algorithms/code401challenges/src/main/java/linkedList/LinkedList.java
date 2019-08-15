@@ -130,17 +130,14 @@ public class LinkedList<T> {
       currentTwo = temp2;
     }
 
-      if (currentOne.next == null) {
-        currentOne.next = currentTwo;
-      }
+    if (currentTwo.next == null) {
+      currentTwo.next = currentOne.next;
+      currentOne.next = currentTwo;
+    }
 
-      if (currentTwo.next == null) {
-        currentTwo.next = currentOne.next;
-        currentOne.next = currentTwo;
-      }
-
-
-
+    if (currentOne.next == null) {
+      currentOne.next = currentTwo;
+    }
     return one;
   }
 
