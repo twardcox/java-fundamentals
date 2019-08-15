@@ -147,4 +147,5 @@ public class LinkedListTest {
 
     assertEquals("testMergeList should be equal","1, 2, 3, 4, 5, 6, 7, 8", listOne.toString(LinkedList.mergeLists(listOne, listTwo)));
   }
+
 }
