@@ -110,6 +110,37 @@ public class LinkedList<T> {
 
   }
 
+  public static LinkedList mergeLists(LinkedList one, LinkedList two) {
+    Node currentOne = one.head; // storing head of list one
+    Node currentTwo = two.head; // storing head of list two
+
+
+    while (currentOne.next != null && currentTwo.next != null) { // while neither list's next is null
+      Node temp1; // temporary store of list one's next
+      Node temp2; // temporary store of list two's next
+
+      temp1 = currentOne.next; // assign one's next to var
+      temp2 = currentTwo.next; // assign two's next to var
+
+      currentTwo.next = temp1; // assign list two's next to one's next
+      currentOne.next = currentTwo; // assign list two's head to one's next.
+
+//      advance each lists head
+      currentOne = temp1;
+      currentTwo = temp2;
+    }
+
+    if (currentTwo.next == null) {
+      currentTwo.next = currentOne.next;
+      currentOne.next = currentTwo;
+    }
+
+    if (currentOne.next == null) {
+      currentOne.next = currentTwo;
+    }
+    return one;
+  }
+
 };
 
 

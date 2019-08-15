@@ -130,4 +130,21 @@ public class LinkedListTest {
     list.insert(list, 1);
     assertEquals("testKthFromEnd_SizeEqualsOne should be equal","1", list.kthFromEnd(list, 1));
   }
+
+  @Test
+  public void testMergeList(){
+    LinkedList<Integer> listOne = new LinkedList<>();
+    listOne.insert(listOne, 1);
+    listOne.append(listOne, 3);
+    listOne.append(listOne, 5);
+    listOne.append(listOne, 7);
+
+    LinkedList<Integer> listTwo = new LinkedList<>();
+    listTwo.insert(listTwo, 2);
+    listTwo.append(listTwo, 4);
+    listTwo.append(listTwo, 6);
+    listTwo.append(listTwo, 8);
+
+    assertEquals("testMergeList should be equal","1, 2, 3, 4, 5, 6, 7, 8", listOne.toString(LinkedList.mergeLists(listOne, listTwo)));
+  }
 }
