@@ -1,7 +1,7 @@
 package stacksandqueues;
 
 public class Stack<T> {
-  private Node<T> top;
+  protected Node<T> top;
 
   public void push( T value){
     Node<T> new_node = new Node<>();
