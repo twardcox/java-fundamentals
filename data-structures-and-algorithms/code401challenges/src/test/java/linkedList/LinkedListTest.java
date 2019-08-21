@@ -5,12 +5,12 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class LinkedListTest {
-
-
   @Test
   public void testEmptyLinkedList(){
+    System.out.println("testing empty linked list");
     LinkedList list = new LinkedList();
     assertNull("testEmptyLinkedList should be empty.",list.head);
+    System.out.println("finished test");
   }
 
   @Test
