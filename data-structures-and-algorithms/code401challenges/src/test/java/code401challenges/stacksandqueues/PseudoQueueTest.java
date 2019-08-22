@@ -1,7 +1,6 @@
-package stacksandqueues;
+package code401challenges.stacksandqueues;
 
 import org.junit.Test;
-import org.junit.experimental.theories.ParametersSuppliedBy;
 
 import static org.junit.Assert.*;
 

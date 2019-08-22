@@ -1,4 +1,4 @@
-package stacksandqueues;
+package code401challenges.stacksandqueues;
 
 public class Queue<T> {
 

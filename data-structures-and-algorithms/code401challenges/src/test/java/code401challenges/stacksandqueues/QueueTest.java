@@ -1,4 +1,4 @@
-package stacksandqueues;
+package code401challenges.stacksandqueues;
 
 import org.junit.Test;
 

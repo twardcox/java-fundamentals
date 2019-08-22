@@ -1,4 +1,4 @@
-package stacksandqueues;
+package code401challenges.stacksandqueues;
 
 public class PseudoQueue<T> {
   protected Stack<T> front = new Stack<>();
