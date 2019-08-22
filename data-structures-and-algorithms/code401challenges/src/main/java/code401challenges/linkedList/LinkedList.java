@@ -1,4 +1,4 @@
-package linkedList;
+package code401challenges.linkedList;
 
 import java.util.ArrayList;
 
