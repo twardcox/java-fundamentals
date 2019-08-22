@@ -3,7 +3,7 @@ package code401challenges.linkedList;
 import java.util.ArrayList;
 
 public class LinkedList<T> {
-  public static Node head;
+  public Node head;
 
   public LinkedList insert(LinkedList list, T value) {
     Node<T> new_node = new Node<T>(value);
