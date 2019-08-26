@@ -1,6 +1,6 @@
 package utilities;
 
-import stacksandqueues.Queue;
+import code401challenges.stacksandqueues.Queue;
 
 public class AnimalShelter<Object> {
   private Queue<Cat> cats = new Queue<>();
