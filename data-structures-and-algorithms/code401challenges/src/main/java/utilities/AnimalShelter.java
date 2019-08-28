@@ -22,13 +22,13 @@ public class AnimalShelter<Object> {
         '}';
   }
 
-  public void enqueue(Object animal){
-    if(animal.getClass() == Cat.class){
-      cats.enqueue((Cat) animal);
-    } else if (animal.getClass() == Dog.class){
-      dogs.enqueue((Dog) animal);
-    }
-  }
+//  public void enqueue(Object animal){
+//    if(animal.getClass() == Cat.class){
+//      cats.enqueue((Cat) animal);
+//    } else if (animal.getClass() == Dog.class){
+//      dogs.enqueue((Dog) animal);
+//    }
+//  }
 
   public Object dequeue(String pref){
     if(pref.toLowerCase().equals("cat")){

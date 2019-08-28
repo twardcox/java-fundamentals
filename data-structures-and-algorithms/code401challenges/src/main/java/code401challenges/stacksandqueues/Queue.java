@@ -5,9 +5,9 @@ public class Queue<T> {
     private Node<T> front;
     private Node<T> back;
 
-    public void enqueue( T value){
+    public void enqueue(T value){
       Node<T> new_node = new Node<>();
-      new_node.value = value;
+      new_node.value = (T) value;
 
       if(this.front == null){
         this.back = new_node;
@@ -35,6 +35,9 @@ public class Queue<T> {
       return this.front.value;
     }
 
+    public boolean isEmpty(){
+      return this.front == null;
+    }
 
 
     public String toString(){
