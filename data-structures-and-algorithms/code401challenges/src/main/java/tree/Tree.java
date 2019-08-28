@@ -1,12 +1,14 @@
 package tree;
 
+import code401challenges.stacksandqueues.Queue;
+
 import java.util.ArrayList;
 
 //https://www.baeldung.com/java-binary-tree
 
 public class Tree<T> {
 
-    protected Node root;
+    protected Node <T> root;
 
     private ArrayList<T> returnValues = new ArrayList<>();
 
@@ -34,6 +36,38 @@ public class Tree<T> {
             inOrder(current.right);
             this.returnValues.add(current.value);
         }
+    }
+
+//    https://stackoverflow.com/questions/16380026/implementing-bfs-in-java
+    protected ArrayList breadthFirstSearch(Tree tree){
+        Queue<Node> queue = new Queue<>();
+        ArrayList<Integer> result = new ArrayList<>();
+        Node<T> root = tree.root;
+
+        if (tree.root == null){
+            return result;
+        }
+
+//      passing the first node into the queue
+        queue.enqueue(tree.root);
+
+//        while the queue has node left continue
+        while (!queue.isEmpty()){
+//            dequeue the first node in the queue
+            Node temp = queue.dequeue();
+//            print temp value
+            System.out.println(temp.value);
+            result.add((Integer) temp.value);
+
+            if (temp.left != null){
+                queue.enqueue(temp.left);
+            }
+
+            if (temp.right != null){
+                queue.enqueue(temp.right);
+            }
+        }
+        return result;
     }
 
     public ArrayList<T> getReturnValues() {
