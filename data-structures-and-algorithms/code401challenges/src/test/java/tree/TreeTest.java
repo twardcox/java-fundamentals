@@ -45,4 +45,16 @@ public class TreeTest {
                                                                 "11, 4]",
           tree.breadthFirstSearch(tree).toString());
     }
+
+    @Test
+    public void testfindMaximumValue_Happy(){
+        Tree<Integer> tree = new Tree<>();
+        tree.root = new Node(5, new Node(6, new Node<>(3), null), new Node<>(1, null, null));
+        tree.find_maximum_value(tree.root);
+//        System.out.println(tree.find_maximum_value(tree.root));
+
+
+        assertEquals("testfindMaximumValue_Happy should be equal", "6",
+          tree.find_maximum_value(tree.root).toString());
+    }
 }
