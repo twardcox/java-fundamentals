@@ -29,6 +29,22 @@ public class Tree<T> {
         }
     }
 
+    private int max = Integer.MIN_VALUE;
+
+    protected Integer find_maximum_value(Node<T> current){
+
+
+        if (current != null){
+            if ((int) current.value > max){
+                max = (int) current.value;
+            }
+            find_maximum_value(current.left);
+            find_maximum_value(current.right);
+        }
+        return max;
+
+    }
+
     protected void postOrder(Node<T> current){
         if (current != null){
 
