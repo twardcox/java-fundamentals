@@ -46,4 +46,14 @@ public class InsertionSortTest {
 //    System.out.println("*************" + Arrays.toString(insertionSort));
     assertEquals("testInsertionSort_OneNumber", "[8]", Arrays.toString(insertionSort));
   }
+
+  @Test
+  public void testMergeSort_Even() {
+    int[] newArr = new int[]{1, 4, 2, 3, 6, 3, 8, 0};
+    int[] newSort = InsertionSort.mergeSort(newArr);
+    System.out.println(" ************** " + Arrays.toString(newSort));
+    System.out.println("Im here.");
+
+
+  }
 }
