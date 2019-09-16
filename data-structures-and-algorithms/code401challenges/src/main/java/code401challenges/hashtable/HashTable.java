@@ -26,12 +26,7 @@ public class HashTable {
     // set a var (int) of the hash(key)
     int hashKey = hash(key);
 
-  if (this.map[hashKey] != null){
-
-  }
-
-
-    // If map[hashvalue] is a thing ... do the linked list thing
+      // If map[hashvalue] is a thing ... do the linked list thing
     // Otherwise, just add the node.
     if( this.map[hashKey] == null ) {
       map[hashKey] = new Node(key, value);
