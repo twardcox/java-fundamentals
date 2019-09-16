@@ -1,8 +1,10 @@
 package tree;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree {
 
-    protected Node<Integer> root;
+    public Node<Integer> root;
 
 //    https://www.baeldung.com/java-binary-tree
 
@@ -55,6 +57,17 @@ public class BinarySearchTree {
         return "BinarySearchTree{" +
                 "root=" + root +
                 '}';
+    }
+
+    public ArrayList<Integer> returnValues = new ArrayList<>();
+
+    public void inOrder(Node<Integer> current){
+        if (current != null){
+
+            inOrder(current.left);
+            this.returnValues.add(current.value);
+            inOrder(current.right);
+        }
     }
 
 
