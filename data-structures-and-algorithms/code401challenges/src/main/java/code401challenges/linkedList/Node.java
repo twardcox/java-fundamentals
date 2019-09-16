@@ -5,9 +5,10 @@ public class Node<T> {
   Node<T> next;
 
   //    Constructor
-  Node(T v)
+  public Node(T v)
   {
     value = v;
     next = null;
   }
+
 }
