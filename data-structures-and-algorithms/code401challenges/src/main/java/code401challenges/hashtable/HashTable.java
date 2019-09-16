@@ -1,7 +1,5 @@
 package code401challenges.hashtable;
 
-import java.util.Arrays;
-
 public class HashTable {
 
   private Node[] map;
@@ -28,11 +26,10 @@ public class HashTable {
     // set a var (int) of the hash(key)
     int hashKey = hash(key);
 
+  if (this.map[hashKey] != null){
 
-//    if map has duplicate keys double map size
-    if (this.map[hashKey] != null){
-      expand();
-    }
+  }
+
 
     // If map[hashvalue] is a thing ... do the linked list thing
     // Otherwise, just add the node.
@@ -44,7 +41,7 @@ public class HashTable {
       map[hashKey] = new Node(key, value);
       map[hashKey].setNext(temp);
     }
-    System.out.println(Arrays.toString(this.map));
+
 
   }
 
@@ -52,38 +49,65 @@ public class HashTable {
   public String get(String key) {
     // hash the key (should give me the same thing)
     // if the hash table has that key, send back the value from the node.
-    int  hashKey = hash(key);
-    if(this.map[hashKey] != null ) {
-      // Actually go through the list and check the actual value
+    int hashKey = hash(key);
 
-      return (String) map[hashKey].value;
+    if (this.map[hashKey] != null) {
+      Node currentNode = this.map[hashKey];
+
+      while (currentNode != null) {
+        if (currentNode.key.equals(key)) {
+          return currentNode.value;
+        }
+        currentNode = currentNode.next;
+      }
     }
-
     return null;
   }
 
+
+
   // contains()
   public boolean contains(String key) {
-    int hashKey = hash(key);
-    // Actually go through the list and check the actual value
 
-    return map[hashKey] != null;
+    int hashKey = hash(key);
+
+    if (this.map[hashKey] != null) {
+      Node currentNode = this.map[hashKey];
+
+      while (currentNode != null) {
+        if (currentNode.key.equals(key)) {
+          return true;
+        }
+        currentNode = currentNode.next;
+      }
+
+    }
+    return false;
   }
+
+// Oh shit.
 
   // double map size
   private void expand(){
 
-    Node[] temp = this.map.clone();
+//    make a copy of map
+//    init new temp w/size = this.map
+    Node[] temp = new Node[this.map.length];
 
+//    iterate over map setting temp Node values
+    for (int i = 0; i<temp.length; i++){
+      temp[i] = new Node(this.map[i].key, this.map[i].value);
+    }
 
-    new HashTable(this.map.length * 2);
+//    delete old map by resetting Hash Table map
+    new HashTable(temp.length * 2 );
 
-    for (Node item : this.map){
+//    iterate over map re-adding temp values
+    for (Node item : temp){
       add(item.key, item.value);
     }
 
 
-    System.out.println("********************map 2" + Arrays.toString(map));
 
 
   }
