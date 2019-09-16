@@ -8,11 +8,11 @@ import java.util.ArrayList;
 
 public class Tree<T> {
 
-    protected Node <T> root;
+    public Node <T> root;
 
-    private ArrayList<T> returnValues = new ArrayList<>();
+    public ArrayList<T> returnValues = new ArrayList<>();
 
-    protected void inOrder(Node<T> current){
+    public void inOrder(Node<T> current){
         if (current != null){
 
             inOrder(current.left);
