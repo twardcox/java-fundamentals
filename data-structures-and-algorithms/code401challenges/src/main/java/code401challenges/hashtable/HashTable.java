@@ -2,7 +2,7 @@ package code401challenges.hashtable;
 
 public class HashTable {
 
-  private Node[] map;
+  public Node[] map;
 
   public HashTable(int size) {
     map = new Node[size];
