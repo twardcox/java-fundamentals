@@ -37,7 +37,6 @@ public class HashTable {
       map[hashKey].setNext(temp);
     }
 
-
   }
 
   // get()
@@ -59,7 +58,74 @@ public class HashTable {
     return null;
   }
 
+  // get()
+  public Node getNode(String key) {
+    // hash the key (should give me the same thing)
+    // if the hash table has that key, send back the value from the node.
+    int hashKey = hash(key);
 
+    if (this.map[hashKey] != null) {
+      Node currentNode = this.map[hashKey];
+
+      while (currentNode != null) {
+        if (currentNode.key.equals(key)) {
+          return currentNode;
+        }
+        currentNode = currentNode.next;
+      }
+    }
+    return null;
+  }
+
+  // get linked list
+  public String getAdjVertices(String key) {
+    // hash the key (should give me the same thing)
+    // if the hash table has that key, send back the value from the node.
+    int hashKey = hash(key);
+
+    if (this.map[hashKey] != null) {
+      Node currentNode = this.map[hashKey];
+
+      while (currentNode != null) {
+        if (currentNode.key.equals(key)) {
+          return currentNode.value;
+        }
+        currentNode = currentNode.next;
+      }
+    }
+    return null;
+  }
+
+  public String remove(String key){
+    int hashKey = hash(key);
+    if (this.map[hashKey] == null){
+      return "Node does not exist";
+    }
+//    if the key exists and does not have an attached linked list remove it
+    if (this.map[hashKey] != null && this.map[hashKey].next == null && this.map[hashKey].value.equals(key)){
+      this.map[hashKey] = null;
+    }
+
+//    if the key's value does not match key search linked list for value and remove it.
+    if (this.map[hashKey] != null && this.map[hashKey].next != null && !this.map[hashKey].value.equals(key)){
+      Node currentNode = this.map[hashKey];
+      while (currentNode != null) {
+        if (currentNode.next.key.equals(key)) {
+//          remove that node
+          Node temp = currentNode.next.next;
+          currentNode.next.next = null;
+          currentNode.next = temp;
+          return currentNode.value;
+        }
+        currentNode = currentNode.next;
+      }
+
+
+    }
+
+    return "This node does not exist";
+
+  }
 
   // contains()
   public boolean contains(String key) {
