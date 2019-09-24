@@ -13,8 +13,8 @@ public class GraphTest {
     Vertex<String> v2 = graph.addNode("Alice");
 
     graph.addDirectedEdge(v1, v2, 8);
-    BreadthFirst.breadthFirstTraversal(graph, v1);
-    System.out.println(BreadthFirst.breadthFirstTraversal(graph, v1).toString());
+
+    System.out.println(graph.breadthFirstTraversal(v1).toString());
   }
 
   @Test
