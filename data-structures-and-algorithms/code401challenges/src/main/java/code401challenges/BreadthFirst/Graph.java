@@ -2,15 +2,15 @@ package code401challenges.BreadthFirst;
 
 import java.util.*;
 
-public class Graph<T> {
+public class Graph {
 
   public HashMap<Vertex, ArrayList<Edge>> adjacencyList;
-  public HashMap<T, Vertex> valueMap;
+//  public HashMap<T, Vertex> valueMap;
   private int _size = 0;
 
   public Graph(){
     adjacencyList = new HashMap<>();
-    valueMap = new HashMap<>();
+//    valueMap = new HashMap<>();
   }
 
   public Vertex addNode(String value){
@@ -19,6 +19,8 @@ public class Graph<T> {
     this.adjacencyList.putIfAbsent(node, edge);
     return node;
   }
+
+
 
   public void removeVertex(String value){
     for ( Vertex v : adjacencyList.keySet()){
@@ -36,7 +38,7 @@ public class Graph<T> {
     }
   }
 
-  public void addUndirectedEdge(Vertex a, Vertex b, int weightA, int weightB){
+  public Edge addUndirectedEdge(Vertex a, Vertex b, int weightA, int weightB){
     Edge eToA = new Edge(weightA, a);
     Edge eToB = new Edge(weightB, b);
 
@@ -45,13 +47,16 @@ public class Graph<T> {
 
     listA.add(eToB);
     listB.add(eToA);
+
+    return eToA;
   }
 
-  public void addDirectedEdge(Vertex a, Vertex b, int weight){
+  public Edge addDirectedEdge(Vertex a, Vertex b, int weight){
 
     Edge edge = new Edge(weight, b);
     ArrayList<Edge> listA = adjacencyList.get(a);
     listA.add(edge);
+    return edge;
 
   }
 

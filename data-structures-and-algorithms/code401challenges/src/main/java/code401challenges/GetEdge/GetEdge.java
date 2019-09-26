@@ -4,8 +4,7 @@ import code401challenges.BreadthFirst.Edge;
 import code401challenges.BreadthFirst.Graph;
 import code401challenges.BreadthFirst.Vertex;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GetEdge {
 
@@ -60,12 +59,14 @@ public class GetEdge {
   }
 
 
-  Vertex translateStringToVertex(String s){
+  private Vertex translateStringToVertex(String s){
     Vertex city = null;
 
     //for all the vertexes in the graph
-    for ( Vertex v : graph.adjacencyList.keySet()) {
+    for (Vertex v : graph.adjacencyList.keySet()) {
+
       String value = v.getValue();
+
 
       //if list has the value of the vertex,
       if (s.equals(value) ) {
