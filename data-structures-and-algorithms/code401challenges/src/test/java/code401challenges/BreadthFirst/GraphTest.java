@@ -15,6 +15,7 @@ public class GraphTest {
     graph.addDirectedEdge(v1, v2, 8);
 
     System.out.println(graph.breadthFirstTraversal(v1).toString());
+
   }
 
   @Test
